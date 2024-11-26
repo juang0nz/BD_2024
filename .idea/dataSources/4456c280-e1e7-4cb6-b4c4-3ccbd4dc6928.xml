@@ -2,102 +2,165 @@
 <dataSource name="BD@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root|localhost|ALLOW_NONEXISTENT_DEFINER|G
+      <Grants>|root||root||ALTER|G
 |root||root|localhost|ALTER|G
+|root||root||ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
+|root||root||APPLICATION_PASSWORD_ADMIN|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
+|root||root||AUDIT_ABORT_EXEMPT|G
 |root||root|localhost|AUDIT_ABORT_EXEMPT|G
+|root||root||AUDIT_ADMIN|G
 |root||root|localhost|AUDIT_ADMIN|G
 |root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||root||AUTHENTICATION_POLICY_ADMIN|G
 |root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||mysql.session|localhost|BACKUP_ADMIN|G
+|root||root||BACKUP_ADMIN|G
 |root||root|localhost|BACKUP_ADMIN|G
+|root||root||BINLOG_ADMIN|G
 |root||root|localhost|BINLOG_ADMIN|G
+|root||root||BINLOG_ENCRYPTION_ADMIN|G
 |root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
 |root||mysql.session|localhost|CLONE_ADMIN|G
+|root||root||CLONE_ADMIN|G
 |root||root|localhost|CLONE_ADMIN|G
 |root||mysql.session|localhost|CONNECTION_ADMIN|G
+|root||root||CONNECTION_ADMIN|G
 |root||root|localhost|CONNECTION_ADMIN|G
+|root||root||CREATE|G
 |root||root|localhost|CREATE|G
+|root||root||CREATE ROLE|G
 |root||root|localhost|CREATE ROLE|G
+|root||root||CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
+|root||root||CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
+|root||root||CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||root||CREATE USER|G
 |root||root|localhost|CREATE USER|G
+|root||root||CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
+|root||root||DELETE|G
 |root||root|localhost|DELETE|G
+|root||root||DROP|G
 |root||root|localhost|DROP|G
+|root||root||DROP ROLE|G
 |root||root|localhost|DROP ROLE|G
+|root||root||ENCRYPTION_KEY_ADMIN|G
 |root||root|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||root||EVENT|G
 |root||root|localhost|EVENT|G
+|root||root||EXECUTE|G
 |root||root|localhost|EXECUTE|G
+|root||root||FILE|G
 |root||root|localhost|FILE|G
 |root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
 |root||mysql.session|localhost|FIREWALL_EXEMPT|G
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
+|root||root||FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
+|root||root||FLUSH_OPTIMIZER_COSTS|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
-|root||root|localhost|FLUSH_PRIVILEGES|G
+|root||root||FLUSH_STATUS|G
 |root||root|localhost|FLUSH_STATUS|G
+|root||root||FLUSH_TABLES|G
 |root||root|localhost|FLUSH_TABLES|G
+|root||root||FLUSH_USER_RESOURCES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
+|root||root||GROUP_REPLICATION_ADMIN|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
+|root||root||GROUP_REPLICATION_STREAM|G
 |root||root|localhost|GROUP_REPLICATION_STREAM|G
+|root||root||INDEX|G
 |root||root|localhost|INDEX|G
+|root||root||INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||root||INNODB_REDO_LOG_ENABLE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||root||INSERT|G
 |root||root|localhost|INSERT|G
+|root||root||LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
-|root||root|localhost|OPTIMIZE_LOCAL_TABLE|G
+|root||root||PASSWORDLESS_USER_ADMIN|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||root||PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||root||PROCESS|G
 |root||root|localhost|PROCESS|G
+|root||root||REFERENCES|G
 |root||root|localhost|REFERENCES|G
+|root||root||RELOAD|G
 |root||root|localhost|RELOAD|G
+|root||root||REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
+|root||root||REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
+|root||root||REPLICATION_APPLIER|G
 |root||root|localhost|REPLICATION_APPLIER|G
+|root||root||REPLICATION_SLAVE_ADMIN|G
 |root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||root||RESOURCE_GROUP_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_ADMIN|G
+|root||root||RESOURCE_GROUP_USER|G
 |root||root|localhost|RESOURCE_GROUP_USER|G
+|root||root||ROLE_ADMIN|G
 |root||root|localhost|ROLE_ADMIN|G
 |root||mysql.infoschema|localhost|SELECT|G
+|root||root||SELECT|G
 |root||root|localhost|SELECT|G
+|root||root||SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||root||SERVICE_CONNECTION_ADMIN|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
+|root||root||SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SET_ANY_DEFINER|G
+|root||root||SET_USER_ID|G
+|root||root|localhost|SET_USER_ID|G
+|root||root||SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
+|root||root||SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
+|root||root||SHOW_ROUTINE|G
 |root||root|localhost|SHOW_ROUTINE|G
 |root||mysql.session|localhost|SHUTDOWN|G
+|root||root||SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
 |root||mysql.session|localhost|SUPER|G
+|root||root||SUPER|G
 |root||root|localhost|SUPER|G
 |root||mysql.infoschema|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_USER|G
 |root||mysql.sys|localhost|SYSTEM_USER|G
+|root||root||SYSTEM_USER|G
 |root||root|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||root||SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||root||TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||root||TELEMETRY_LOG_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||root|localhost|TRANSACTION_GTID_TAG|G
+|root||root||TRIGGER|G
 |root||root|localhost|TRIGGER|G
+|root||root||UPDATE|G
 |root||root|localhost|UPDATE|G
+|root||root||XA_RECOVER_ADMIN|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
+|root||root||grant option|G
 |root||root|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>9.1.0</ServerVersion>
+      <ServerVersion>8.0.40</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -998,9 +1061,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="287" parent="1" name="utf8mb4_zh_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="288" parent="1" name="bd">
+    <schema id="288" parent="1" name="BD">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-11-24.22:57:08</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-11-26.18:39:58</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="information_schema">
@@ -1031,324 +1094,327 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="296" parent="1" name="root">
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="297" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="297" parent="288" name="actividades">
+    <table id="298" parent="288" name="Actividades">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="298" parent="288" name="alumno_clase">
+    <table id="299" parent="288" name="Alumno_clase">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="299" parent="288" name="alumnos">
+    <table id="300" parent="288" name="Alumnos">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="clase">
+    <table id="301" parent="288" name="Clase">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="288" name="equipamiento">
+    <table id="302" parent="288" name="Equipamiento">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="288" name="instructores">
+    <table id="303" parent="288" name="Instructores">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="303" parent="288" name="logueo">
+    <table id="304" parent="288" name="Logueo">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="304" parent="288" name="turnos">
+    <table id="305" parent="288" name="Turnos">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="305" parent="297" name="id">
+    <column id="306" parent="298" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="306" parent="297" name="descripcion">
+    <column id="307" parent="298" name="descripcion">
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="307" parent="297" name="costo">
+    <column id="308" parent="298" name="costo">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <column id="308" parent="297" name="res_edad">
+    <column id="309" parent="298" name="res_edad">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <index id="309" parent="297" name="PRIMARY">
+    <index id="310" parent="298" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="310" parent="297" name="PRIMARY">
+    <key id="311" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="311" parent="298" name="id_clase">
+    <column id="312" parent="299" name="id_clase">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="312" parent="298" name="ci_alumno">
+    <column id="313" parent="299" name="ci_alumno">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="313" parent="298" name="id_equipamiento">
+    <column id="314" parent="299" name="id_equipamiento">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="314" parent="298" name="alumno_clase_ibfk_1">
+    <foreign-key id="315" parent="299" name="Alumno_clase_ibfk_1">
       <ColNames>id_clase</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>clase</RefTableName>
+      <RefTableName>Clase</RefTableName>
     </foreign-key>
-    <foreign-key id="315" parent="298" name="alumno_clase_ibfk_2">
+    <foreign-key id="316" parent="299" name="Alumno_clase_ibfk_2">
       <ColNames>ci_alumno</ColNames>
       <RefColNames>ci</RefColNames>
-      <RefTableName>alumnos</RefTableName>
+      <RefTableName>Alumnos</RefTableName>
     </foreign-key>
-    <foreign-key id="316" parent="298" name="alumno_clase_ibfk_3">
+    <foreign-key id="317" parent="299" name="Alumno_clase_ibfk_3">
       <ColNames>id_equipamiento</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>equipamiento</RefTableName>
+      <RefTableName>Equipamiento</RefTableName>
     </foreign-key>
-    <index id="317" parent="298" name="PRIMARY">
+    <index id="318" parent="299" name="PRIMARY">
       <ColNames>id_clase
 ci_alumno
 id_equipamiento</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="318" parent="298" name="ci_alumno">
+    <index id="319" parent="299" name="ci_alumno">
       <ColNames>ci_alumno</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="319" parent="298" name="id_equipamiento">
+    <index id="320" parent="299" name="id_equipamiento">
       <ColNames>id_equipamiento</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="320" parent="298" name="PRIMARY">
+    <key id="321" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="321" parent="299" name="ci">
+    <column id="322" parent="300" name="ci">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="322" parent="299" name="nombre">
+    <column id="323" parent="300" name="nombre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>char(15)|0s</StoredType>
     </column>
-    <column id="323" parent="299" name="apellido">
+    <column id="324" parent="300" name="apellido">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>char(20)|0s</StoredType>
     </column>
-    <column id="324" parent="299" name="fecha_nacimiento">
+    <column id="325" parent="300" name="fecha_nacimiento">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="325" parent="299" name="telefono_contacto">
+    <column id="326" parent="300" name="telefono_contacto">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="326" parent="299" name="correo">
+    <column id="327" parent="300" name="correo">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <index id="327" parent="299" name="PRIMARY">
+    <index id="328" parent="300" name="PRIMARY">
       <ColNames>ci</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="328" parent="299" name="PRIMARY">
+    <key id="329" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="329" parent="300" name="id">
+    <column id="330" parent="301" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="330" parent="300" name="ci_instructor">
+    <column id="331" parent="301" name="ci_instructor">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="331" parent="300" name="id_actividad">
+    <column id="332" parent="301" name="id_actividad">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="332" parent="300" name="id_turno">
+    <column id="333" parent="301" name="id_turno">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="333" parent="300" name="dictada">
+    <column id="334" parent="301" name="dictada">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <foreign-key id="334" parent="300" name="clase_ibfk_1">
+    <foreign-key id="335" parent="301" name="Clase_ibfk_1">
       <ColNames>ci_instructor</ColNames>
       <RefColNames>ci</RefColNames>
-      <RefTableName>instructores</RefTableName>
+      <RefTableName>Instructores</RefTableName>
     </foreign-key>
-    <foreign-key id="335" parent="300" name="clase_ibfk_2">
+    <foreign-key id="336" parent="301" name="Clase_ibfk_2">
       <ColNames>id_actividad</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>actividades</RefTableName>
+      <RefTableName>Actividades</RefTableName>
     </foreign-key>
-    <foreign-key id="336" parent="300" name="clase_ibfk_3">
+    <foreign-key id="337" parent="301" name="Clase_ibfk_3">
       <ColNames>id_turno</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>turnos</RefTableName>
+      <RefTableName>Turnos</RefTableName>
     </foreign-key>
-    <index id="337" parent="300" name="PRIMARY">
+    <index id="338" parent="301" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="338" parent="300" name="ci_instructor">
+    <index id="339" parent="301" name="ci_instructor">
       <ColNames>ci_instructor</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="339" parent="300" name="id_actividad">
+    <index id="340" parent="301" name="id_actividad">
       <ColNames>id_actividad</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="340" parent="300" name="id_turno">
+    <index id="341" parent="301" name="id_turno">
       <ColNames>id_turno</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="341" parent="300" name="PRIMARY">
+    <key id="342" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="342" parent="301" name="id">
+    <column id="343" parent="302" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="343" parent="301" name="id_actividad">
+    <column id="344" parent="302" name="id_actividad">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="344" parent="301" name="descripcion">
+    <column id="345" parent="302" name="descripcion">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="345" parent="301" name="costo">
+    <column id="346" parent="302" name="costo">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <foreign-key id="346" parent="301" name="equipamiento_ibfk_1">
+    <foreign-key id="347" parent="302" name="Equipamiento_ibfk_1">
       <ColNames>id_actividad</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>actividades</RefTableName>
+      <RefTableName>Actividades</RefTableName>
     </foreign-key>
-    <index id="347" parent="301" name="PRIMARY">
+    <index id="348" parent="302" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="348" parent="301" name="id_actividad">
+    <index id="349" parent="302" name="id_actividad">
       <ColNames>id_actividad</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="349" parent="301" name="PRIMARY">
+    <key id="350" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="350" parent="302" name="ci">
+    <column id="351" parent="303" name="ci">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="351" parent="302" name="nombre">
+    <column id="352" parent="303" name="nombre">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>char(15)|0s</StoredType>
     </column>
-    <column id="352" parent="302" name="apellido">
+    <column id="353" parent="303" name="apellido">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>char(20)|0s</StoredType>
     </column>
-    <index id="353" parent="302" name="PRIMARY">
+    <index id="354" parent="303" name="PRIMARY">
       <ColNames>ci</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="354" parent="302" name="PRIMARY">
+    <key id="355" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="355" parent="303" name="correo">
+    <column id="356" parent="304" name="correo">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <column id="356" parent="303" name="contraseña">
+    <column id="357" parent="304" name="contraseña">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(30)|0s</StoredType>
     </column>
-    <index id="357" parent="303" name="PRIMARY">
+    <index id="358" parent="304" name="PRIMARY">
       <ColNames>correo</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="358" parent="303" name="PRIMARY">
+    <key id="359" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="359" parent="304" name="id">
+    <column id="360" parent="305" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="360" parent="304" name="hora_inicio">
+    <column id="361" parent="305" name="hora_inicio">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>time|0s</StoredType>
     </column>
-    <column id="361" parent="304" name="hora_fin">
+    <column id="362" parent="305" name="hora_fin">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>time|0s</StoredType>
     </column>
-    <index id="362" parent="304" name="PRIMARY">
+    <index id="363" parent="305" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="363" parent="304" name="PRIMARY">
+    <key id="364" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

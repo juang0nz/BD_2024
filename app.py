@@ -10,7 +10,7 @@ def add_instructor():
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "INSERT INTO instructores (ci, nombre, apellido) VALUES (%s, %s, %s)",
+        'INSERT INTO Instructores (ci, nombre, apellido) VALUES (%s, %s, %s)',
         (data['ci'], data['nombre'], data['apellido'])
     )
     connection.commit()
@@ -25,7 +25,7 @@ def update_instructor(ci):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "UPDATE instructores SET nombre=%s, apellido=%s WHERE ci=%s",
+        "UPDATE Instructores SET nombre=%s, apellido=%s WHERE ci=%s",
         (data['nombre'], data['apellido'], ci)
     )
     connection.commit()
@@ -38,7 +38,7 @@ def update_instructor(ci):
 def delete_instructor(ci):
     connection = get_db_connection()
     cursor = connection.cursor()
-    cursor.execute("DELETE FROM instructores WHERE ci=%s", (ci,))
+    cursor.execute("DELETE FROM Instructores WHERE ci=%s", (ci,))
     connection.commit()
     cursor.close()
     connection.close()
@@ -54,7 +54,7 @@ def add_turno():
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "INSERT INTO turnos (hora_inicio, hora_fin) VALUES (%s, %s)",
+        "INSERT INTO Turnos (hora_inicio, hora_fin) VALUES (%s, %s)",
         (data['hora_inicio'], data['hora_fin'])
     )
     connection.commit()
@@ -69,7 +69,7 @@ def update_turno(id):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "UPDATE turnos SET hora_inicio=%s, hora_fin=%s WHERE id=%s",
+        "UPDATE Turnos SET hora_inicio=%s, hora_fin=%s WHERE id=%s",
         (data['hora_inicio'], data['hora_fin'], id)
     )
     connection.commit()
@@ -82,7 +82,7 @@ def update_turno(id):
 def delete_turno(id):
     connection = get_db_connection()
     cursor = connection.cursor()
-    cursor.execute("DELETE FROM turnos WHERE id=%s", (id,))
+    cursor.execute("DELETE FROM BD.Turnos WHERE id=%s", (id,))
     connection.commit()
     cursor.close()
     connection.close()
@@ -98,7 +98,7 @@ def update_actividad(id):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "UPDATE actividades SET descripcion=%s, costo=%s, restriccion_edad=%s WHERE id=%s",
+        "UPDATE BD.Actividades SET descripcion=%s, costo=%s, res_edad=%s WHERE id=%s",
         (data['descripcion'], data['costo'], data['restriccion_edad'], id)
     )
     connection.commit()
@@ -108,6 +108,8 @@ def update_actividad(id):
 
 #ALTA BAJA Y MODIFICACIONES DE ALUMNOS:
 
+
+
 #PARA CREAR UN ALUMNO:
 
 @app.route('/alumnos', methods=['POST'])
@@ -116,7 +118,7 @@ def add_alumno():
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "INSERT INTO alumnos (ci, nombre, apellido, fecha_nacimiento, telefono, correo_electronico) VALUES (%s, %s, %s, %s, %s, %s)",
+        "INSERT INTO BD.Alumnos (ci, nombre, apellido, fecha_nacimiento, telefono_contacto, correo) VALUES (%s, %s, %s, %s, %s, %s)",
         (data['ci'], data['nombre'], data['apellido'], data['fecha_nacimiento'], data['telefono'], data['correo_electronico'])
     )
     connection.commit()
@@ -133,7 +135,7 @@ def update_alumno(ci):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "UPDATE alumnos SET nombre=%s, apellido=%s, fecha_nacimiento=%s, telefono=%s, correo_electronico=%s WHERE ci=%s",
+        "UPDATE BD.Alumnos SET nombre=%s, apellido=%s, fecha_nacimiento=%s, telefono_contacto=%s, correo=%s WHERE ci=%s",
         (data['nombre'], data['apellido'], data['fecha_nacimiento'], data['telefono'], data['correo_electronico'], ci)
     )
     connection.commit()
@@ -147,7 +149,7 @@ def update_alumno(ci):
 def delete_alumno(ci):
     connection = get_db_connection()
     cursor = connection.cursor()
-    cursor.execute("DELETE FROM alumnos WHERE ci=%s", (ci,))
+    cursor.execute("DELETE FROM BD.Alumnos WHERE ci=%s", (ci,))
     connection.commit()
     cursor.close()
     connection.close()
@@ -163,7 +165,7 @@ def add_clase():
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "INSERT INTO clase (ci_instructor, id_actividad, id_turno, dictada) VALUES (%s, %s, %s, %s)",
+        "INSERT INTO Clase (ci_instructor, id_actividad, id_turno, dictada) VALUES (%s, %s, %s, %s)",
         (data['ci_instructor'], data['id_actividad'], data['id_turno'], False)
     )
     connection.commit()
@@ -179,7 +181,7 @@ def update_clase(id):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "UPDATE clase SET ci_instructor=%s, id_actividad=%s, id_turno=%s WHERE id=%s",
+        "UPDATE Clase SET ci_instructor=%s, id_actividad=%s, id_turno=%s WHERE id=%s",
         (data['ci_instructor'], data['id_actividad'], data['id_turno'], id)
     )
     connection.commit()
@@ -195,7 +197,7 @@ def add_alumno_clase(id_clase):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "INSERT INTO alumno_clase (id_clase, ci_alumno, id_equipamiento) VALUES (%s, %s, %s)",
+        "INSERT INTO Alumno_clase (id_clase, ci_alumno, id_equipamiento) VALUES (%s, %s, %s)",
         (id_clase, data['ci_alumno'], data.get('id_equipamiento'))
     )
     connection.commit()
@@ -210,7 +212,7 @@ def remove_alumno_clase(id_clase, ci_alumno):
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "DELETE FROM alumno_clase WHERE id_clase=%s AND ci_alumno=%s",
+        "DELETE FROM BD.Alumno_clase WHERE id_clase=%s AND ci_alumno=%s",
         (id_clase, ci_alumno)
     )
     connection.commit()
@@ -227,10 +229,10 @@ def reporte_ingresos_actividades():
     cursor = connection.cursor()
     cursor.execute(
         "SELECT a.descripcion, SUM(c.costo + IFNULL(e.costo, 0)) AS ingresos_totales "
-        "FROM clase c "
-        "JOIN actividades a ON c.id_actividad = a.id "
-        "LEFT JOIN alumno_clase ac ON c.id = ac.id_clase "
-        "LEFT JOIN equipamiento e ON ac.id_equipamiento = e.id "
+        "FROM Clase c "
+        "JOIN BD.Actividades a ON c.id_actividad = a.id "
+        "LEFT JOIN BD.Alumno_clase ac ON c.id = ac.id_clase "
+        "LEFT JOIN Equipamiento e ON ac.id_equipamiento = e.id "
         "GROUP BY a.descripcion"
     )
     resultados = cursor.fetchall()
@@ -246,9 +248,9 @@ def reporte_alumnos_actividades():
     cursor = connection.cursor()
     cursor.execute(
         "SELECT a.descripcion, COUNT(ac.ci_alumno) AS cantidad_alumnos "
-        "FROM actividades a "
-        "JOIN clase c ON a.id = c.id_actividad "
-        "LEFT JOIN alumno_clase ac ON c.id = ac.id_clase "
+        "FROM BD.Actividades a "
+        "JOIN BD.Clase c ON a.id = c.id_actividad "
+        "LEFT JOIN BD.Alumno_clase ac ON c.id = ac.id_clase "
         "GROUP BY a.descripcion"
     )
     resultados = cursor.fetchall()
@@ -263,10 +265,8 @@ def reporte_clases_turnos():
     connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute(
-        "SELECT t.hora_inicio, t.hora_fin, COUNT(c.id) AS cantidad_clases "
-        "FROM turnos t "
-        "JOIN clase c ON t.id = c.id_turno "
-        "GROUP BY t.hora_inicio, t.hora_fin"
+        "SELECT t.hora_inicio, t.hora_fin, COUNT(c.id) AS cantidad_clases FROM Turnos t  JOIN Clase c ON t.id = c.id_turno GROUP BY t.hora_inicio, t.hora_fin"
+
     )
     resultados = cursor.fetchall()
     cursor.close()
